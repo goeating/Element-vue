@@ -9,19 +9,22 @@
       <main class="container">
         <!-- 侧边栏 start -->
         <aside class="sidebar-wrapper">
-          <el-menu default-active="table" class="el-menu-vertical-demo" :router="true">
-            <el-submenu index="1">
-              <template slot="title">
-                <i class="el-icon-message"></i>导航一
-              </template>
-              <el-menu-item index="table">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-              <el-menu-item index="1-3">选项3</el-menu-item>
-              <el-submenu index="1-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="1-4-1">选项1</el-menu-item>
+          <el-menu :default-active="$route.path" :router="true" unique-opened>
+            <template v-for="(items, index) in $router.options.routes">
+              <!-- 没下拉列的导航 -->
+              <el-menu-item :index="items.children[0].path" v-if="!items.isHidden && items.isOnlyNode" :key="index">
+                <i class="el-icon-menu"></i>{{items.children[0].name}}
+              </el-menu-item>
+              <!-- 没下拉列的导航 -->
+              <!-- 有下拉列的导航 -->
+              <el-submenu :index="items.path" v-if="!items.isHidden && !items.isOnlyNode" :key="index">
+                <template slot="title">
+                  <i class="el-icon-plus"></i>{{items.name}}
+                </template>
+                <el-menu-item :index="child.path" v-for="(child, index) in items.children" :key="index">{{child.name}}</el-menu-item>
               </el-submenu>
-            </el-submenu>
+              <!-- 有下拉列的导航 -->
+            </template>
           </el-menu>
         </aside>
         <!-- 侧边栏 end -->
@@ -30,10 +33,7 @@
           <div class="page-container">
             <div class="breadcrumb-wrapper">
               <el-breadcrumb separator="/">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-                <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-                <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: items.path }" v-for="(items, index) in $route.matched" :key="index">{{items.name}}</el-breadcrumb-item>
               </el-breadcrumb>
             </div>
             <transition name="el-fade-in-linear">
@@ -52,7 +52,9 @@
 
 <script>
 export default {
-
+  mounted() {
+    console.log(this.$route)
+  }
 }
 </script>
 
@@ -89,7 +91,7 @@ export default {
       .page-container {
         margin-left: 235px;
         padding: 25px 20px 10px;
-        .breadcrumb-wrapper{
+        .breadcrumb-wrapper {
           position: relative;
           margin: -25px -20px 0;
           padding: 11px 20px;

@@ -51,7 +51,7 @@ export default {
       this.$refs.form.validate((valid) => {
         if (valid) {
           this.isLogin = true
-          this.$router.push('/main')
+          this.$router.push('/index')
         } else {
           console.log('error submit!!')
           return false
