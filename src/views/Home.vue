@@ -2,14 +2,23 @@
   <el-row class="wrapper">
     <el-col :span="24">
       <header class="header-wrapper">
-  
+        <h1 class="title">老司机后台管理系统</h1>
+        <el-dropdown class="userinfo">
+          <span class="el-dropdown-link userinfo-inner">
+            Admin<img :src="imgUrl" width="50" height="50"> 
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>个人信息</el-dropdown-item>
+            <el-dropdown-item divided>登出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </header>
     </el-col>
     <el-col :span="24">
       <main class="container">
         <!-- 侧边栏 start -->
         <aside class="sidebar-wrapper">
-          <el-menu :default-active="$route.path" :router="true" unique-opened>
+          <el-menu :default-active="$route.path" :router="true">
             <template v-for="(items, index) in $router.options.routes">
               <!-- 没下拉列的导航 -->
               <el-menu-item :index="items.children[0].path" v-if="!items.isHidden && items.isOnlyNode" :key="index">
@@ -17,7 +26,7 @@
               </el-menu-item>
               <!-- 没下拉列的导航 -->
               <!-- 有下拉列的导航 -->
-              <el-submenu :index="items.path" v-if="!items.isHidden && !items.isOnlyNode" :key="index">
+              <el-submenu :index="'nav'+index" v-if="!items.isHidden && !items.isOnlyNode" :key="index">
                 <template slot="title">
                   <i class="el-icon-plus"></i>{{items.name}}
                 </template>
@@ -52,8 +61,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      imgUrl: '../static/img/2.jpg'
+    }
+  },
   mounted() {
-    console.log(this.$route)
+    // console.log(this.$route)
   }
 }
 </script>
@@ -68,6 +82,33 @@ export default {
     height: 80px;
     background: #324057;
     border-bottom: 1px solid #475669;
+    .title {
+      float: left;
+      margin: 0;
+      width: 235px;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: normal;
+      color: #fff;
+    }
+    .userinfo {
+      float: right;
+      margin-right: 20px;
+      height: 80px;
+      .userinfo-inner{
+        display: block;
+        height: 80px;
+        line-height: 80px;
+        color: #fff;
+        img{
+          margin-left: 10px;
+          border-radius: 50%;
+          vertical-align: middle;
+        }
+      }
+    }
   }
   .container {
     position: absolute;
@@ -91,6 +132,9 @@ export default {
       .page-container {
         margin-left: 235px;
         padding: 25px 20px 10px;
+        height: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
         .breadcrumb-wrapper {
           position: relative;
           margin: -25px -20px 0;

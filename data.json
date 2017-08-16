@@ -1,0 +1,134 @@
+{
+  "sale" :[
+    {
+      "Id": 0,
+      "Name": "雪碧",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234533,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 1,
+      "Name": "雪碧1",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": false,
+      "ReleaseTime": 1234534,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 2,
+      "Name": "雪碧2",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234535,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 3,
+      "Name": "雪碧3",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234535,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 4,
+      "Name": "雪碧4",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234537,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 5,
+      "Name": "雪碧5",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234538,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 6,
+      "Name": "雪碧6",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 1234539,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 7,
+      "Name": "雪碧7",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345310,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 8,
+      "Name": "雪碧8",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345311,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 9,
+      "Name": "雪碧9",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345312,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 10,
+      "Name": "雪碧10",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345313,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 11,
+      "Name": "雪碧11",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345314,
+      "CreationTime": 123123
+    },
+    {
+      "Id": 12,
+      "Name": "雪碧12",
+      "Type": "饮料",
+      "Oprice": 39,
+      "Pprice": 5,
+      "Release": true,
+      "ReleaseTime": 12345315,
+      "CreationTime": 123123
+    }
+  ]
+}
